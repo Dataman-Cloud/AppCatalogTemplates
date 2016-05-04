@@ -1,0 +1,9 @@
+example:
+  appName: "example"
+  imageVersion: "latest"
+  cpu: 0.3
+  mem: 1024
+  instances: 2
+  log_paths:
+    - /var/log/exmaple.log
+

@@ -11,16 +11,18 @@ drone:
     - redis:storage
 
 mysql:
-  image:  devregistry.dataman-inc.com:5000/library/drone
+  image:  devregistry.dataman-inc.com:5000/library/mysql
   restart: always
   volumes:
     - /var/run/docker.sock:/var/run/docker.sock
     - /var/lib/drone:/var/lib/drone
   ports:
     - "3306:3306"
+  environment:
+    MYSQL_ROOT_PASSWORD: foobar
 
 redis:
-  image:  devregistry.dataman-inc.com:5000/library/drone
+  image:  devregistry.dataman-inc.com:5000/library/redis
   restart: always
   volumes:
     - /var/run/docker.sock:/var/run/docker.sock

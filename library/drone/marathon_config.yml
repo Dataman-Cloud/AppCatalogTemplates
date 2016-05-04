@@ -19,7 +19,7 @@ mysql:
     - /var/log/mysql.log
 
 
-mysql:
+redis:
   clusterId: 1
   appName: "redis"
   imageVersion: "latest"

@@ -1,4 +1,4 @@
 #!/bin/bash
 
-echo "http --auth admin:Harbor12345 post localhost:8080/api/v3/repositories/library/drone/apps @./sry_compose_app_creation.json"
-http --auth admin:Harbor12345 post localhost:8080/api/v3/repositories/library/drone/apps @./sry_compose_app_creation.json
+echo "http post localhost:6080/api/v3/repositories/library/drone/apps Authorization:001122 @./sry_compose_app_creation.json "
+http post localhost:6080/api/v3/repositories/library/drone/apps Authorization:001122 @./sry_compose_app_creation.json 
