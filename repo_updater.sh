@@ -1,10 +1,10 @@
 #!/bin/bash
 
 #HARBOR_URL=http://forward.dataman-inc.com/
-#HARBOR_URL=devregistry.dataman-inc.com:5005
-HARBOR_URL=127.0.0.1:8080
+HARBOR_URL=devforward.dataman-inc.net
+#HARBOR_URL=127.0.0.1:8080
 USERNAME=admin
-TOKEN=001122
+TOKEN=a75e13b2a2464ff994fbc8ff60218388
 PASSWORD=Dataman1234
 
 PROJECT_NAME=library
@@ -74,15 +74,20 @@ update_repo_is_public()
   echo ""
   echo " ====  UPDATING $1's publicity to $2 ===="
   echo ""
-  curl -H "Authorization: $TOKEN" -u $USERNAME:$PASSWORD -X PUT -k -H "Content-Type: application/json"  $HARBOR_URL/api/v3/repositories/$PROJECT_NAME/$1 -d " { \"isPublic\": $2 } "
+  echo curl -H "Authorization: $TOKEN" -u $USERNAME:$PASSWORD -X PUT -k -H "Content-Type: application/json"  $HARBOR_URL/api/v3/repositories/$PROJECT_NAME/$1 -d " { \"isPublic\":  $2} "
+  curl -H "Authorization: $TOKEN" -u $USERNAME:$PASSWORD -X PUT -k -H "Content-Type: application/json"  $HARBOR_URL/api/v3/repositories/$PROJECT_NAME/$1 -d " { \"isPublic\":  $2} "
 }
 
 for repo in `ls library`; do 
+  CATEGORY=`cat ./library/$repo/category`
+  DESCRIPTION=`cat ./library/$repo/description`
+  ISPUBLIC=`cat ./library/$repo/ispublic`
+
   update_repo_category $repo $CATEGORY
   update_repo_description $repo $DESCRIPTION
-  update_repo_is_public $repo $ISPUBLIC
   update_repo_catalog $repo
   update_repo_marathon_config $repo
   update_repo_docker_compose $repo
   update_repo_readme $repo
+  update_repo_is_public $repo $ISPUBLIC
 done
