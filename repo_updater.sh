@@ -4,7 +4,8 @@
 HARBOR_URL=devforward.dataman-inc.net
 #HARBOR_URL=127.0.0.1:8080
 USERNAME=admin
-TOKEN=a75e13b2a2464ff994fbc8ff60218388
+TOKEN=dcff5e2d838744e98683d32a4b106256
+#TOKEN=001122
 PASSWORD=Dataman1234
 
 PROJECT_NAME=library
@@ -33,8 +34,8 @@ update_repo_docker_compose()
   echo ""
   echo " ====  UPDATING $1's docker compose to $2 ===="
   echo ""
-  echo curl -H "Authorization: $TOKEN" -u $USERNAME:$PASSWORD   -X PUT -k -H "Content-Type: application/json" $HARBOR_URL/api/v3/repositories/$PROJECT_NAME/$1 -d " { \"dockerCompose\": \"`REPO=$1 ruby -rbase64 -e 'puts Base64.encode64(File.read(Dir.pwd + \"/library/#{ENV[\"REPO\"]}/docker_compose.yml\")).gsub(\"\\n\", "")'`\" } "
-  curl -H "Authorization: $TOKEN" -u $USERNAME:$PASSWORD  -X PUT -k -H "Content-Type: application/json" $HARBOR_URL/api/v3/repositories/$PROJECT_NAME/$1 -d " { \"dockerCompose\": \"`REPO=$1 ruby -rbase64 -e  'puts Base64.encode64(File.read(Dir.pwd + \"/library/#{ENV[\"REPO\"]}/docker_compose.yml\")).gsub(\"\\n\",\"\")'`\" } "
+  echo curl -H "Authorization: $TOKEN" -u $USERNAME:$PASSWORD   -X PUT -k -H "Content-Type: application/json" $HARBOR_URL/api/v3/repositories/$PROJECT_NAME/$1 -d " { \"dockerCompose\": \"`REPO=$1 ruby -rbase64 -e 'puts Base64.encode64(File.read(Dir.pwd + \"/library/#{ENV[\"REPO\"]}/docker_compose.yml\")).gsub(\"\\n\", "")'`\" }"
+  curl -H "Authorization: $TOKEN" -u $USERNAME:$PASSWORD  -X PUT -k -H "Content-Type: application/json" $HARBOR_URL/api/v3/repositories/$PROJECT_NAME/$1 -d " { \"dockerCompose\": \"`REPO=$1 ruby -rbase64 -e  'puts Base64.encode64(File.read(Dir.pwd + \"/library/#{ENV[\"REPO\"]}/docker_compose.yml\")).gsub(\"\\n\",\"\")'`\" }"
 }
 
 # 更新catalog
@@ -78,7 +79,7 @@ update_repo_is_public()
   curl -H "Authorization: $TOKEN" -u $USERNAME:$PASSWORD -X PUT -k -H "Content-Type: application/json"  $HARBOR_URL/api/v3/repositories/$PROJECT_NAME/$1 -d " { \"isPublic\":  $2} "
 }
 
-for repo in `ls library`; do 
+for repo in `ls library`; do
   CATEGORY=`cat ./library/$repo/category`
   DESCRIPTION=`cat ./library/$repo/description`
   ISPUBLIC=`cat ./library/$repo/ispublic`
@@ -91,3 +92,4 @@ for repo in `ls library`; do
   update_repo_readme $repo
   update_repo_is_public $repo $ISPUBLIC
 done
+

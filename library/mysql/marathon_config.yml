@@ -1,0 +1,6 @@
+mysql:
+  appName: "mysql"
+  imageVersion: "latest"
+  cpu: 0.1
+  mem: 16
+  instances: 1

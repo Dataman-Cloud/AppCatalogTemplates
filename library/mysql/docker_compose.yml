@@ -1,0 +1,7 @@
+mysql:
+  image:  devregistry.dataman-inc.com:5000/library/mysql
+  restart: always
+  ports:
+    - "${default_port}:3306"
+  environment:
+    MYSQL_ROOT_PASSWORD: ${mysql_root_password}
