@@ -1,5 +1,5 @@
-nginx:
-  appName: "nginx"
+mysql:
+  appName: "redis"
   imageVersion: "latest"
   cpu: 0.1
   mem: 16

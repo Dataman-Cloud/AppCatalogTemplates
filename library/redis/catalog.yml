@@ -1,0 +1,10 @@
+name: "redis"
+version: "latest"
+description: "Redis"
+questions:
+  - variable: "default_port"
+    label: "默认端口号"
+    description: "Redis默认端口号"
+    required: false
+    type: "string"
+    default: "6379"

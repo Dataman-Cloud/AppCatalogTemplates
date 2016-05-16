@@ -1,0 +1,13 @@
+name: "httpd"
+version: "4,2"
+questions:
+  - variable: "htdocs_path"
+    label: "htdocs"
+    description: "PHP和静态文件存储目录"
+    required: true
+    type: "string"
+  - variable: "apache_config_path"
+    label: "httpd.conf路径"
+    description: "例如： /usr/local/apache2/conf/httpd.conf"
+    required: false
+    type: "string"

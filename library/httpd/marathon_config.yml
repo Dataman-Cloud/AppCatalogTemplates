@@ -1,6 +1,7 @@
-nginx:
-  appName: "nginx"
+httpd:
+  appName: "httpd"
   imageVersion: "latest"
   cpu: 0.1
   mem: 16
   instances: 1
+

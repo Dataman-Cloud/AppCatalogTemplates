@@ -1,0 +1,8 @@
+apache:
+  image:  devregistry.dataman-inc.com:5000/library/httpd
+  restart: always
+  volumes:
+    - "$htdocs_path":/usr/local/apache2/htdocs/
+    - "$apache_config_path":/usr/local/apache2/conf/httpd.conf
+
+
