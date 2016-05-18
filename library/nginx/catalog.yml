@@ -1,1 +1,8 @@
 name: "nginx"
+questions:
+  - variable: "default_port"
+    label: "默认对外端口"
+    description: "默认对外端口,如：8080"
+    required: false
+    type: "string"
+    default: "8080"

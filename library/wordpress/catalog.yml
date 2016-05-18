@@ -1,0 +1,28 @@
+name: "wordpress"
+version: "latest"
+description: "WordPress"
+questions:
+  - variable: "wordpress_db_host"
+    label: "WordPress数据库地址"
+    description: "WordPress数据库地址，如： 10.3.10.3:3306, 10.3.10.3为安装过数人云服务发现组件的主机"
+    required: true
+    type: "string"
+    default: "10.3.10.3:3306"
+  - variable: "wordpress_db_user"
+    label: "默认数据库用户"
+    description: "默认数据库用户名,如：root"
+    required: false
+    type: "string"
+    default: "root"
+  - variable: "wordpress_db_password"
+    label: "默认数据库密码"
+    description: "默认数据库密码,如：rootroot"
+    required: false
+    type: "string"
+    default: "rootroot"
+  - variable: "default_port"
+    label: "默认对外端口"
+    description: "默认对外端口,如：8080"
+    required: false
+    type: "string"
+    default: "8080"
