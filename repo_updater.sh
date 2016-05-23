@@ -1,10 +1,10 @@
 #!/bin/bash
 
 #HARBOR_URL=http://forward.dataman-inc.com/
-HARBOR_URL=devforward.dataman-inc.net
+HARBOR_URL=https://forward.shurenyun.com/
 #HARBOR_URL=127.0.0.1:8080
 USERNAME=admin
-TOKEN=74521cedc92446e8a292fcf2e1d0187d
+TOKEN=2081a290c1854787b6d1cb784f0b0dc3
 #TOKEN=001122
 PASSWORD=Dataman1234
 

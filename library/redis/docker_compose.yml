@@ -1,5 +1,5 @@
 mysql:
-  image:  devregistry.dataman-inc.com:5000/library/redis
+  image:  demoregistry.dataman-inc.com:5000/library/redis
   restart: always
   ports:
     - "${default_port}:6379"

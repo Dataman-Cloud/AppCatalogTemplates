@@ -1,4 +1,4 @@
-mysql:
+wordpress:
   appName: "wordpress"
   imageVersion: "latest"
   cpu: 0.1
