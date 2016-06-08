@@ -6,3 +6,14 @@ questions:
     required: false
     type: "string"
     default: "8080"
+    validations:
+      - schema: "type"
+        value: "integer"
+      - schema: "range"
+        value: "1025-4999"
+      - schema: "range"
+        value: "5101-9999"
+      - schema: "range"
+        value: "20001-30999"
+      - schema: "range"
+        value: "32001-65534"

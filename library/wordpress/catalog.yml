@@ -11,18 +11,29 @@ questions:
   - variable: "wordpress_db_user"
     label: "默认数据库用户"
     description: "默认数据库用户名,如：root"
-    required: false
+    required: true
     type: "string"
     default: "root"
   - variable: "wordpress_db_password"
     label: "默认数据库密码"
     description: "默认数据库密码,如：rootroot"
-    required: false
+    required: true
     type: "string"
     default: "rootroot"
   - variable: "default_port"
     label: "默认对外端口"
     description: "默认对外端口,如：8080"
-    required: false
+    required: true
     type: "string"
     default: "8080"
+    validations:
+      - schema: "type"
+        value: "integer"
+      - schema: "range"
+        value: "1025-4999"
+      - schema: "range"
+        value: "5101-9999"
+      - schema: "range"
+        value: "20001-30999"
+      - schema: "range"
+        value: "32001-65534"
