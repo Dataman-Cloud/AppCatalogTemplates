@@ -1,5 +1,5 @@
 wordpress:
-  image:  demoregistry.dataman-inc.com:5000/library/wordpress
+  image:  catalog.shurenyun.com/library/wordpress
   restart: always
   ports:
     - "${default_port}:80"

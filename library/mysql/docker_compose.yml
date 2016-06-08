@@ -1,5 +1,5 @@
 mysql:
-  image:  catalog.shurenyun.com/library/mysql
+  image: catalog.shurenyun.com/library/mysql
   restart: always
   ports:
     - "${default_port}:3306"

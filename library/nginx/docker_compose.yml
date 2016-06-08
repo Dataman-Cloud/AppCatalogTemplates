@@ -1,5 +1,5 @@
 nginx:
-  image:  demoregistry.dataman-inc.com:5000/library/nginx
+  image:  catalog.shurenyun.com/library/nginx
   restart: always
   ports:
     - "${default_port}:80"
