@@ -12,7 +12,7 @@ questions:
     label: "默认端口号"
     description: "MySQL默认端口号"
     required: false
-    type: "int"
+    type: "string"
     default: "3306"
     validations:
       - schema: "type"
