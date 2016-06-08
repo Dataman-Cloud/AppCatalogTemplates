@@ -4,7 +4,7 @@ questions:
     label: "默认对外端口"
     description: "默认对外端口,如：8080"
     required: false
-    type: "string"
+    type: "int"
     default: "8080"
     validations:
       - schema: "type"

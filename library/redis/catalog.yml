@@ -6,7 +6,7 @@ questions:
     label: "默认端口号"
     description: "Redis默认端口号"
     required: false
-    type: "string"
+    type: "int"
     default: "6379"
     validations:
       - schema: "type"
