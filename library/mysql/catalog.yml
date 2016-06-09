@@ -11,7 +11,7 @@ questions:
   - variable: "default_port"
     label: "默认端口号"
     description: "MySQL默认端口号"
-    required: false
+    required: true
     type: "string"
     default: "3306"
     validations:

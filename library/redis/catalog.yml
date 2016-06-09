@@ -5,7 +5,7 @@ questions:
   - variable: "default_port"
     label: "默认端口号"
     description: "Redis默认端口号"
-    required: false
+    required: true
     type: "string"
     default: "6379"
     validations:
