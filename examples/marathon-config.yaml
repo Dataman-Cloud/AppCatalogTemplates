@@ -1,0 +1,9 @@
+mysql:
+  cpu: 0.1
+  mem: 168
+  instances: 2
+
+wordpress:
+  cpu: 0.1
+  mem: 168
+  instances: 2
